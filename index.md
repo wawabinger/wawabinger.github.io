@@ -1,3 +1,5 @@
-## Welcome to GitHub Pages
+# Welcome to GitHub Pages
 
-Hello there
+Hello there!
+
+Welcome to my blog!
