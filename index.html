@@ -5,11 +5,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=750,initial-scale=0.5,maximum-scale=0.5,minimum-scale=0.5,user-scalable=no" />
-    <link rel="stylesheet" type="text/css" href="webpage/bootstrap.min.css" />
-    <script language="javascript" src="webpage/jquery.min.js"></script>
-    <script language="javascript" src="webpage/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="webpage/cssReset.css" />
-    <link rel="icon" href="myfavicon.ico" type="image/x-icon" />
     <title>Puhe Hao@NJUPT</title>
     <meta name="description" content="Puhe Hao's Homepage - NJUPT CS">
     <meta name="keywords" content="Puhe Hao, NJUPT">
@@ -28,9 +23,102 @@
             margin: 0;
             padding: 0;
         }
+
+        /* Mac-style language toggle button */
+        .language-toggle-container {
+            position: absolute;
+            top: 20px;
+            right: 20%;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .language-toggle {
+            position: relative;
+            width: 50px;
+            height: 24px;
+            background-color: #ddd;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .language-toggle:hover {
+            background-color: #ccc;
+        }
+
+        .language-toggle.active {
+            background-color: #2196F3;
+        }
+
+        .toggle-knob {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: left 0.3s;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .language-toggle.active .toggle-knob {
+            left: 28px;
+        }
+
+        .language-label {
+            margin-left: 10px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Hide Chinese content by default */
+        .chinese {
+            display: none;
+        }
     </style>
 
 </head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("languageToggle");
+        const label = document.getElementById("languageLabel");
+        const englishElements = document.querySelectorAll(".english");
+        const chineseElements = document.querySelectorAll(".chinese");
+
+        // 默认语言（你可以改成 'zh' 以默认显示中文）
+        let currentLanguage = "zh";
+
+        function toggleLanguage() {
+            if (currentLanguage === "en") {
+                // 切换到中文
+                englishElements.forEach(el => el.style.display = "none");
+                chineseElements.forEach(el => el.style.display = "block");
+                label.textContent = "中 / EN";
+                toggle.classList.add("active");
+                currentLanguage = "zh";
+            } else {
+                // 切换到英文
+                englishElements.forEach(el => el.style.display = "block");
+                chineseElements.forEach(el => el.style.display = "none");
+                label.textContent = "EN / 中";
+                toggle.classList.remove("active");
+                currentLanguage = "en";
+            }
+        }
+
+        // 绑定点击事件
+        toggle.addEventListener("click", toggleLanguage);
+
+        // 页面加载时，根据当前语言隐藏或显示内容
+        toggleLanguage();
+    });
+</script>
+
 
 <body>
     <style type='text/css'>
@@ -160,6 +248,14 @@
         }
     </style>
 
+    <!-- Language toggle button (Mac style) -->
+    <div class="language-toggle-container">
+        <div class="language-toggle" id="languageToggle">
+            <div class="toggle-knob"></div>
+        </div>
+        <span class="language-label" id="languageLabel">EN / 中</span>
+    </div>
+
     <div class="content bio">
         <div class="left">
             <img class='me' src="./images/me.jpg"></img><br />
@@ -169,15 +265,26 @@
                 <span class="name">Puhe Hao</span>
                 <span class="chineseName">(郝谱合)</span>
             </div>
-            <div class="affliation">
-                <p> 南京邮电大学计算机学院 信息安全 </p>
-
-
-                <a href="https://cs.njupt.edu.cn" target="_blank">School of Computer Science </a></br>
+            <div class="affliation english">
+                <p>网络空间安全, 硕士研究生二年级</p>
+                <p>Cyber Security, Graduate Student</p>
+                <a href="https://cs.njupt.edu.cn" target="_blank">School of Computer Science</a></br>
                 <a href="https://www.njupt.edu.cn" target="_blank">Nanjing University of Posts and
                     Telecommunications</a></br>
                 <p> </p>
                 <p>Email: 1024041109@njupt.edu.cn</p>
+                <p>
+                    <font color="#FF4500">Looking for PhD Position in 26 Fall</font>
+                </p>
+            </div>
+            <div class="affliation chinese">
+                <p>网络空间安全, 硕士研究生二年级</p>
+                <a href="https://cs.njupt.edu.cn" target="_blank">计算机学院</a>
+                <a href="https://www.njupt.edu.cn" target="_blank">南京邮电大学</a></br>
+                <p>邮箱: 1024041109@njupt.edu.cn</p>
+                <p>
+                    <font color="#FF4500">申请26年博士</font>
+                </p>
             </div>
         </div>
         <hr class="new">
@@ -207,28 +314,88 @@
         }
     </style>
 
-    <!-- <div class="content quickLink">
-        <a class="block" href="#biography">Biography</a>
-        <a class="block" href="#honors">Honors</a>
-        <a class="block" href="#publications">Publications</a>
-        <a class="block" href="#teaching">Talks</a>
-    </div>    -->
-
     <div class="content intro" name='biography'>
         <a name="biography"></a>
-        <div class='title'>About me</div>
-        I obtain my B.S degree in 2024 from the School of Computer Science, Nanjing university of Posts
-        and telecommunications (NJUPT), where I am currently pursuing a M.S degree. I am fortunate to be advised by
-        Prof.
-        Guozi Sun. My research interests include
-        privacy, blockchain, and federated learning. My current research focuses on speech integrity verification.
+        <div class='title english'>About me</div>
+        <div class='title chinese'>个人简历</div>
+        <div class="english">
+            I obtain my B.S degree in 2024 from the School of Computer Science, Nanjing university of Posts
+            and telecommunications (NJUPT), where I am currently pursuing a M.S degree. I am fortunate to be advised by
+            Prof.
+            Guozi Sun. My past research interests include blockchain, federated learning and data market.
+
+            <p>
+                My future research aims on ensuring the privacy and security of physical AI systems in the next
+                generation of intelligent sensing and communication systems.
+            </p>
+        </div>
+        <div class="chinese">
+            我于2024年在南京邮电大学计算机学院、软件学院、网络空间安全学院获得信息安全学士学位, 目前在该校孙国梓教授指导下攻读硕士学位, 预计2026年毕业, 我过去的研究兴趣包括区块链、联邦学习和数据交易。
+            <p>
+                在未来的研究中，我希望致力于确保下一代智能传感和通信系统中的物理人工智能系统的隐私和安全。
+            </p>
+        </div>
+        <hr class="new">
+    </div>
+
+    <div class="content education" name='education'>
+        <a name="education"></a>
+        <div class='title english'>Education</div>
+        <div class='title chinese'>教育背景</div>
+        <ul class="english">
+            <li><strong>M.S. in Information Security</strong> &ensp; &ensp; &ensp; (2024-expected 2026)<br />
+                School of Computer Science, Nanjing University of Posts and Telecommunications<br />
+                Advisor: Prof. Guozi Sun
+            </li>
+            <li><strong>B.S. in Computer Science</strong> &ensp; &ensp; &ensp; &ensp; &ensp;&ensp;
+                (2020-2024)<br />
+                Nanjing University of Posts and Telecommunications<br />
+
+            </li>
+        </ul>
+        <ul class="chinese">
+            <li><strong>网络空间安全 &nbsp &nbsp 硕士</strong> &nbsp &nbsp &nbsp &nbsp &nbsp(2024-预计2026)<br />
+                南京邮电大学计算机学院、软件学院、网络空间安全学院<br />
+                导师：孙国梓教授
+            </li>
+            <li><strong>信息安全 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 学士</strong> &nbsp &nbsp &nbsp &nbsp
+                &nbsp(2020-2024)<br />
+                南京邮电大学计算机学院、软件学院、网络空间安全学院<br />
+
+            </li>
+        </ul>
         <hr class="new">
     </div>
 
     <div class="content publications" name='publications'>
         <a name="publications"></a>
-        <div class="title">Publications</div>
+        <div class="title english">Publications</div>
+        <div class="title chinese">发表论文</div>
         <ol>
+            <li>
+                <b>
+                    <font color=#FF7F50>[Submitted to KDD 2025]</font>
+                </b> <b>
+                    <font color=#08306b>Pay it Forward: A Sustainable, Fair, and Personalized Data Market via Federated
+                        Learning</font>
+                </b>
+                <br> <b> Puhe Hao </b>, Zihan Liu, Jinfei Liu, Guozi Sun*
+                <br> in <i> ACM SIGKDD International Conference on Knowledge Discovery and Data Mining <b>
+                        <font color=#DC143C>(CCF-A)</font>
+                    </b></i>, 2025.
+            </li>
+
+            <li>
+                <b>
+                    <font color=#FF7F50>[Submitted to IOTJ 2025]</font>
+                </b> <b>
+                    <font color=#08306b>Decentralized Access Control for Trustworthy Data Management in Vehicular Edge
+                        Networks</font>
+                </b>
+                <br> <b> Puhe Hao </b>, Zihan Liu, Zhexuan Yang, Xiao Qu, Zhiquan Liu, Guozi Sun*
+                <br> in <i> IEEE Internet of Things Journal <font color=#DC143C>(CCF-C)</font> </i>, 2025.
+            </li>
+
             <li>
                 <b>
                     <font color=#4682B4>[GlobeCom 2023]</font>
@@ -238,6 +405,22 @@
                 </b>
                 <br> <b> Puhe Hao </b>, Tianyu Pan, Rui Han, Xiao Qu, Zhexuan Yang, Guozi Sun*
                 <br> in <i> IEEE Global Communications Conference <font color=#DC143C>(CCF-C)</font> </i>, 2023.
+            </li>
+
+
+
+            <li>
+                <b>
+                    <font color=#4682B4>[CSCWD 2025]</font>
+                </b> <b>
+                    <font color=#08306b>Towards Efficient and Auditable Heterogeneous Data Management in Vehicular Edge
+                        Networks
+                    </font>
+                </b>
+                <br> <b> Puhe Hao </b>, Rui Han, Yu Wang, Mingfa Wan, Teng Yuan, Guozi Sun*
+                <br> in <i> IEEE International Conference on ComputerSupported Cooperative Work in Design<font
+                        color=#DC143C>
+                        (CCF-C)</font> </i>, 2025.
             </li>
 
             <li>
@@ -252,43 +435,94 @@
                 <br> in <i> Asia-Pacific Network Operations and Management Symposium <font color=#DC143C>
                         (CCF-C)</font> </i>, 2023.
             </li>
+        </ol>
+        <hr class="new">
+    </div>
 
 
+    <div class="content intro" name='biography'>
+        <a name="biography"></a>
+        <div class='title english'>About me</div>
+        <div class='title chinese'>个人简历</div>
+        <div class="english">
+            I obtain my B.S degree in 2024 from the School of Computer Science, Nanjing university of Posts
+            and telecommunications (NJUPT), where I am currently pursuing a M.S degree. I am fortunate to be advised by
+            Prof.
+            Guozi Sun. My past research interests include blockchain, federated learning and data market.
+
+            <p>
+                My future research aims on ensuring the privacy and security of physical AI systems in the next
+                generation of intelligent sensing and communication systems.
+            </p>
+        </div>
+        <div class="chinese">
+            我于2024年在南京邮电大学计算机学院、软件学院、网络空间安全学院获得信息安全学士学位, 目前在该校孙国梓教授指导下攻读硕士学位, 预计2026年毕业, 我过去的研究兴趣包括区块链、联邦学习和数据交易。
+            <p>
+                在未来的研究中，我希望致力于确保下一代智能传感和通信系统中的物理人工智能系统的隐私和安全。
+            </p>
+        </div>
+        <hr class="new">
+    </div>
+
+
+    <div class="content publications" name='patents'>
+        <a name="patent"></a>
+        <div class="title english">Patent</div>
+        <div class="title chinese">发表专利</div>
+        <ol>
+            <div class="english">
+                <li>
+                    <b>
+                        <font color=#4682B4>[Pending Patent]</font>
+                    </b> <b>
+                        <font color=#08306b>A Regulatable Privacy-Preserving Data Sharing Method
+                        </font>
+                    </b>
+                    <br> <b> Puhe Hao </b>, Guozi Sun, Tianyu Pan, Rui Han, Xiao Qu, Zhexuan Yang,
+                    <br> Patent Number: 202310503228.1, August 11, 2023 into Substantive Review Process
+                </li>
+            </div>
+
+            <div class="chinese">
+                <li>
+                    <b>
+                        <font color=#4682B4>[发明专利实审阶段]</font>
+                    </b> <b>
+                        <font color=#08306b>一种可监管的数据流转隐私保护方法
+                        </font>
+                    </b>
+                    <br> <b> 郝谱合</b>,孙国梓,潘天裕,韩瑞,渠啸,杨哲轩
+                    <br> 申请号或专利号: 202310503228.1, 2023年08月11日进入实质审查阶段
+                </li>
+            </div>
 
         </ol>
         <hr class="new">
-
     </div>
+
     <div class="content honors" name='honors'>
         <a name="honors"></a>
-        <div class="title">Honors and Awards</div>
-        <ul>
+        <div class="title english">Honors and Awards</div>
+        <div class="title chinese">荣誉与奖项</div>
+        <ul class="english">
             <li>Pacesetter for innovation of NJUPT
                 <font color=#DC143C>(2 out of the department)</font> in 2023
             </li>
-            <li>“China telecom” Enterprise Scholar Ship <font color=#DC143C>(top-ranked 1%) </font> in 2023</li>
+            <li>"China telecom" Enterprise Scholar Ship <font color=#DC143C>(top-ranked 1%) </font> in 2023</li>
             <li>
                 The International Mathematical Contest In Modeling <font color=#DC143C> Meritorious Winner</font>
                 in 2022</li>
-            <li>“YIYI” Enterprise Scholar Ship <font color=#DC143C>(top-ranked 1%) </font> in 2021 </li>
+            <li>"YIYI" Enterprise Scholar Ship <font color=#DC143C>(top-ranked 1%) </font> in 2021 </li>
         </ul>
-        <hr class="new">
-    </div>
-
-    </div>
-    <div class="content recent news" name='news'>
-        <a name="news"></a>
-        <div class="title">Recent News</div>
-        <ul>
-            <li>I am currently working on my B.Eng thesis project on decentralized federated learning.
+        <ul class="chinese">
+            <li>南京邮电大学标兵
+                <font color=#DC143C>(专业前1%)</font> 2023年
             </li>
-            <li>I am presenting my paper in <a href="https://globecom2023.ieee-globecom.org">Globecom 2023</a> on site
-                in Kuala
-                Lumpur, Malaysia.</li>
+            <li>"中国电信"企业奖学金 <font color=#DC143C>(专业前1%) </font> 2023年</li>
+            <li>
+                国际大学生数学建模竞赛 <font color=#DC143C> M奖</font>
+                2022年</li>
+            <li>"一一"企业奖学金 <font color=#DC143C>(专业前1%) </font> 2021年 </li>
         </ul>
         <hr class="new">
     </div>
-
-</body>
-
-</html>
