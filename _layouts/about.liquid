@@ -40,6 +40,11 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    <!-- Education -->
+    {% if page.education and page.education.enabled %}
+      {% include education.liquid %}
+    {% endif %}
+
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
@@ -71,6 +76,11 @@ layout: default
 
         <div class="contact-note">{{ site.contact_note }}</div>
       </div>
+    {% endif %}
+
+    <!-- Honors -->
+    {% if page.honors and page.honors.enabled %}
+      {% include honors.liquid %}
     {% endif %}
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}

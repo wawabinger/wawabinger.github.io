@@ -1,0 +1,45 @@
+<!-- Education Section -->
+{% if page.education %}
+  <h2><a href="#" style="color: inherit">education</a></h2>
+  <div class="education-section">
+    {% if page.education.entries %}
+      {% assign education_entries = page.education.entries | sort: 'start_year' | reverse %}
+      <div style="margin-bottom: 2rem;">
+        {% for entry in education_entries %}
+          <div style="margin-bottom: 1.5rem; {% unless forloop.last %}border-bottom: 1px solid #f0f0f0; padding-bottom: 1.5rem;{% endunless %}">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem;">
+              <h3 style="margin: 0; font-size: 1.1rem; font-weight: 600; color: #333;">{{ entry.degree }}</h3>
+              <span style="color: #888; font-size: 0.9rem; white-space: nowrap;">
+                {% if entry.end_year %}
+                  {{ entry.start_year }} – {{ entry.end_year }}
+                {% else %}
+                  {{ entry.start_year }} – present
+                {% endif %}
+              </span>
+            </div>
+            
+            <div style="color: #666; font-size: 0.95rem; margin-bottom: 0.2rem;">
+              <strong>{{ entry.institution }}</strong>
+              {% if entry.major %} • {{ entry.major }}{% endif %}
+              {% if entry.location %} • {{ entry.location }}{% endif %}
+            </div>
+            
+            {% if entry.description %}
+              <div style="color: #555; font-size: 0.9rem; line-height: 1.4; margin-top: 0.5rem;">
+                {% for item in entry.description %}
+                  <div style="margin-bottom: 0.2rem;">{{ item }}</div>
+                {% endfor %}
+              </div>
+            {% endif %}
+            
+            {% if entry.gpa %}
+              <div style="color: #777; font-size: 0.85rem; margin-top: 0.3rem; font-style: italic;">
+                GPA: {{ entry.gpa }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
