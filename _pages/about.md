@@ -19,6 +19,10 @@ social: true # includes social icons at the bottom of the page
 education:
   enabled: true
   entries:
+    - degree: Visiting Student 
+      institution: State Key Laboratory of Blockchain and Data Security, ZJU
+      start_year: 2025
+      end_year: 2026 (expected)    
     - degree: Master of Science in Cyber Security
       institution: College of Computer Science, NJUPT
       start_year: 2024
@@ -49,9 +53,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am Puhe Hao, a second-year master student in Cyber Security at Nanjing University of Posts and Telecommunications (NJUPT), advised by Prof. [Guozi Sun](https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52A432DCFE050007F01006EFE). I am currently visiting MusLab under the supervision of Prof.[Li Lu](https://lynnlilu.github.io/). 
+Hi, I am Puhe Hao. I'm currently doing research on audio watermarking under the under the supervision of Prof.[Li Lu](https://lynnlilu.github.io/). I am also a second-year master student in Cyber Security at Nanjing University of Posts and Telecommunications (NJUPT), advised by Prof. [Guozi Sun](https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52A432DCFE050007F01006EFE). 
+<!-- I am currently visiting MusLab under the supervision of Prof.[Li Lu](https://lynnlilu.github.io/).  -->
 
-Previously, I graduated from NJUPT with a bachelor's degree in information security in 2024. My past research focused on building a privacy-preserving and economically viable data marketplace.
+<!-- Previously, I graduated from NJUPT with a bachelor's degree in information security in 2024. My past research focused on building a privacy-preserving and economically viable data marketplace. -->
 
 <!-- Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 
