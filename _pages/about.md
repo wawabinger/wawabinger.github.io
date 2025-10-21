@@ -53,7 +53,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi, I am Puhe Hao. I'm currently doing research on audio watermarking under the under the supervision of Prof.[Li Lu](https://lynnlilu.github.io/). I am also a second-year master student in Cyber Security at Nanjing University of Posts and Telecommunications (NJUPT), advised by Prof. [Guozi Sun](https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52A432DCFE050007F01006EFE). 
+Hi, I am Puhe Hao. I'm currently doing research on audio watermarking under the supervision of Prof.[Li Lu](https://lynnlilu.github.io/). I am also a second-year master student in Cyber Security at Nanjing University of Posts and Telecommunications (NJUPT), advised by Prof. [Guozi Sun](https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52A432DCFE050007F01006EFE). 
 <!-- I am currently visiting MusLab under the supervision of Prof.[Li Lu](https://lynnlilu.github.io/).  -->
 
 <!-- Previously, I graduated from NJUPT with a bachelor's degree in information security in 2024. My past research focused on building a privacy-preserving and economically viable data marketplace. -->
