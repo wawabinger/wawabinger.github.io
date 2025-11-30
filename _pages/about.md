@@ -18,11 +18,7 @@ social: true # includes social icons at the bottom of the page
 
 education:
   enabled: true
-  entries:
-    - degree: Visiting Student 
-      institution: State Key Laboratory of Blockchain and Data Security, ZJU
-      start_year: 2025
-      end_year: 2026 (expected)    
+  entries:   
     - degree: Master of Science in Cyber Security
       institution: College of Computer Science, NJUPT
       start_year: 2024
