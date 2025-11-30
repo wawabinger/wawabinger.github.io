@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCF标签预览</title>
+    <style>
+        /* 基础样式 - 模拟al-folio主题 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 930px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .publications {
+            margin-top: 2rem;
+        }
+
+        .publications ol.bibliography {
+            list-style: none;
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .publications ol.bibliography li {
+            margin-bottom: 1rem;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .col-sm-10 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .title {
+            font-weight: bolder;
+            margin-bottom: 0.5rem;
+        }
+
+        .author {
+            margin-bottom: 0.5rem;
+        }
+
+        .author em {
+            border-bottom: 1px solid;
+            font-style: normal;
+        }
+
+        .periodical {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        /* CCF标签样式 */
+        .periodical .ccf-badge {
+            display: inline-block;
+            margin-right: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: white;
+        }
+
+        .periodical .ccf-badge.ccf-a {
+            background-color: #dc3545; /* 红色 */
+        }
+
+        .periodical .ccf-badge.ccf-b {
+            background-color: #ffc107; /* 黄色 */
+            color: #333; /* 黄色背景用深色文字 */
+        }
+
+        .periodical .ccf-badge.ccf-c {
+            background-color: #4a90e2; /* 蓝色 */
+        }
+
+        .links {
+            margin-top: 0.5rem;
+        }
+
+        .links a.btn {
+            color: #333;
+            border: 1px solid #333;
+            padding: 0.25rem 1rem;
+            margin-right: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+        }
+
+        .links a.btn:hover {
+            color: #4a90e2;
+            border-color: #4a90e2;
+        }
+
+        h2 {
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>CCF标签预览</h1>
+    <p>这是一个预览页面，展示CCF标签在selected papers中的显示效果。</p>
+
+    <h2>Selected Publications</h2>
+    <div class="publications">
+        <ol class="bibliography">
+            <li>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <!-- Title -->
+                        <div class="title">A privacy-preserving data sharing scheme based on blockchain for vehicular edge networks</div>
+                        <!-- Author -->
+                        <div class="author">
+                            <em>Puhe Hao</em>, Tianyu Pan, Rui Han, Xiao Qu, Zhexuan Yang, Guozi Sun
+                        </div>
+                        <!-- Journal/Book title and date -->
+                        <div class="periodical">
+                            <span class="badge ccf-badge ccf-c">CCF C</span>
+                            <em>In GLOBECOM 2023-2023 IEEE Global Communications Conference</em>, 2023
+                        </div>
+                        <!-- Links/Buttons -->
+                        <div class="links">
+                            <a href="#" class="btn btn-sm z-depth-0">PDF</a>
+                            <a href="#" class="btn btn-sm z-depth-0">DOI</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <!-- Title -->
+                        <div class="title">RPChain: Regulatable Privacy-Preserving Group Data Sharing Based on Consortium Blockchain</div>
+                        <!-- Author -->
+                        <div class="author">
+                            <em>Puhe Hao</em>, Tianyu Pan, Rui Han, Xiao Qu, Zhexuan Yang, Guozi Sun
+                        </div>
+                        <!-- Journal/Book title and date -->
+                        <div class="periodical">
+                            <span class="badge ccf-badge ccf-c">CCF C</span>
+                            <em>In 2023 24st Asia-Pacific Network Operations and Management Symposium (APNOMS)</em>, 2023
+                        </div>
+                        <!-- Links/Buttons -->
+                        <div class="links">
+                            <a href="#" class="btn btn-sm z-depth-0">PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <!-- Title -->
+                        <div class="title">Towards Efficient and Auditable Heterogeneous Data Management in Vehicular Edge Networks</div>
+                        <!-- Author -->
+                        <div class="author">
+                            <em>Puhe Hao</em>, Rui Han, Yu Wang, Mingfa Wan, Teng Yuan, Guozi Sun
+                        </div>
+                        <!-- Journal/Book title and date -->
+                        <div class="periodical">
+                            <span class="badge ccf-badge ccf-c">CCF C</span>
+                            <em>In 2025 28th International Conference on Computer Supported Cooperative Work in Design (CSCWD)</em>, 2025
+                        </div>
+                        <!-- Links/Buttons -->
+                        <div class="links">
+                            <a href="#" class="btn btn-sm z-depth-0">PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    <hr style="margin-top: 3rem;">
+
+    <h2>不同CCF等级的示例</h2>
+    <div class="publications">
+        <ol class="bibliography">
+            <li>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="title">示例论文 A</div>
+                        <div class="author"><em>作者</em></div>
+                        <div class="periodical">
+                            <span class="badge ccf-badge ccf-a">CCF A</span>
+                            <em>会议名称</em>, 2024
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="title">示例论文 B</div>
+                        <div class="author"><em>作者</em></div>
+                        <div class="periodical">
+                            <span class="badge ccf-badge ccf-b">CCF B</span>
+                            <em>会议名称</em>, 2024
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="title">示例论文 C</div>
+                        <div class="author"><em>作者</em></div>
+                        <div class="periodical">
+                            <span class="badge ccf-badge ccf-c">CCF C</span>
+                            <em>会议名称</em>, 2024
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    <div style="margin-top: 3rem; padding: 1rem; background-color: #f5f5f5; border-radius: 0.25rem;">
+        <h3>说明</h3>
+        <ul>
+            <li>CCF标签显示在期刊/会议信息下方</li>
+            <li>标签使用蓝色背景 (#4a90e2)，白色文字</li>
+            <li>如果论文没有ccf字段，标签不会显示</li>
+            <li>在papers.bib中添加 <code>ccf={A}</code>、<code>ccf={B}</code> 或 <code>ccf={C}</code> 即可显示对应标签</li>
+        </ul>
+    </div>
+</body>
+</html>

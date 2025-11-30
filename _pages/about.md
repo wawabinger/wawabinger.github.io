@@ -28,15 +28,35 @@ education:
       start_year: 2020
       end_year: 2024
 
+Research Experience:
+  enabled: true
+  entries:
+    - position: Research Assistant
+      institution: MusLab, ZJU
+      Advisor: Prof. Li Lu
+      start_year: 2024
+      end_year: Present
+      research: >
+        Audio Watermarking.
+    - position: Research Assistant
+      institution: DFPP, NJUPT
+      Advisor: Prof. Guozi Sun
+      start_year: 2021
+      end_year: 2024
+      research: Blockchain, Data Trading.
+
 honors:
   enabled: true
   entries:
-    - title: Outstanding Graduate
+    - title: Outstanding Graduate (Top 3%)
       organization: Nanjing University of Posts and Telecommunications
       year: 2024
-    - title: Academic Excellence Scholarship
+    - title: Academic Excellence Scholarship (Top 1%)
       organization: Nanjing University of Posts and Telecommunications
       year: 2024
+    - title: Telecom Enterprise Scholarship (Top 1%)
+      organization: Nanjing University of Posts and Telecommunications
+      year: 2022
 
 announcements:
   enabled: false # includes a list of news items
@@ -49,7 +69,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi, I am Puhe Hao. I'm currently doing research on audio watermarking under the supervision of Prof.[Li Lu](https://lynnlilu.github.io/). I am also a second-year master student in Cyber Security at Nanjing University of Posts and Telecommunications (NJUPT), advised by Prof. [Guozi Sun](https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52A432DCFE050007F01006EFE). 
+Hi, I am Puhe Hao, a second-year master student in Cyber Security at Nanjing University of Posts and Telecommunications (NJUPT), advised by Prof. [Guozi Sun](https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52A432DCFE050007F01006EFE).  I'm currently doing research on audio watermarking under the supervision of Prof.[Li Lu](https://lynnlilu.github.io/).
 <!-- I am currently visiting MusLab under the supervision of Prof.[Li Lu](https://lynnlilu.github.io/).  -->
 
 <!-- Previously, I graduated from NJUPT with a bachelor's degree in information security in 2024. My past research focused on building a privacy-preserving and economically viable data marketplace. -->

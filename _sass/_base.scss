@@ -787,6 +787,31 @@ footer.sticky-bottom {
         }
       }
 
+      .periodical {
+        .ccf-badge {
+          display: inline-block;
+          margin-right: 0.5rem;
+          padding: 0.25rem 0.75rem;
+          border-radius: 0.25rem;
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: white;
+        }
+
+        .ccf-badge.ccf-a {
+          background-color: #dc3545; /* 红色 */
+        }
+
+        .ccf-badge.ccf-b {
+          background-color: #ffc107; /* 黄色 */
+          color: #333; /* 黄色背景用深色文字 */
+        }
+
+        .ccf-badge.ccf-c {
+          background-color: #4a90e2; /* 蓝色 */
+        }
+      }
+
       .links {
         a.btn {
           color: var(--global-text-color);
