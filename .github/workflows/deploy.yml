@@ -74,8 +74,23 @@ jobs:
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3.5"
-          bundler-cache: true
+          ruby-version: "3.1.2"
+          bundler-cache: false
+
+      - name: Install Bundler & prepare lockfile 🧰
+        run: |
+          # ensure bundler version matches Gemfile.lock's BUNDLED WITH
+          gem install bundler -v '2.3.2' || true
+          # add linux / generic platforms so CI can resolve native gems
+          bundle lock --add-platform x86_64-linux || true
+          bundle lock --add-platform ruby || true
+
+      - name: Upgrade nokogiri (conservative) 🔧
+        run: |
+          # try a conservative update first; if that fails, do full update
+          set -e
+          bundle update --conservative nokogiri || bundle update nokogiri || true
+
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
         with:
