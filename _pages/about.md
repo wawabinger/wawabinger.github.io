@@ -16,6 +16,27 @@ profile:
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
+research_experience:
+  enabled: true
+  entries:
+    - title: Research Assistant
+      institution: Zhejiang University
+      supervisor: Li Lu
+      start_year: 2024
+      # leave end_year blank if ongoing
+      # description:
+      #   - Focus on audio watermarking.
+    
+    - title: Research Assistant
+      institution: NJUPT
+      supervisor: Guozi Sun
+      start_year: 2021
+      end_year: 2025
+      # description:
+      #   - Focus on blockchain and data trading.
+
+
+
 education:
   enabled: true
   entries:   
@@ -28,22 +49,7 @@ education:
       start_year: 2020
       end_year: 2024
 
-Research Experience:
-  enabled: true
-  entries:
-    - position: Research Assistant
-      institution: MusLab, ZJU
-      Advisor: Prof. Li Lu
-      start_year: 2024
-      end_year: Present
-      research: >
-        Audio Watermarking.
-    - position: Research Assistant
-      institution: DFPP, NJUPT
-      Advisor: Prof. Guozi Sun
-      start_year: 2021
-      end_year: 2024
-      research: Blockchain, Data Trading.
+
 
 honors:
   enabled: true
@@ -69,10 +75,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi, I am Puhe Hao, a second-year master student in Cyber Security at Nanjing University of Posts and Telecommunications (NJUPT), advised by Prof. [Guozi Sun](https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52A432DCFE050007F01006EFE).  I'm currently doing research on audio watermarking under the supervision of Prof.[Li Lu](https://lynnlilu.github.io/).
-<!-- I am currently visiting MusLab under the supervision of Prof.[Li Lu](https://lynnlilu.github.io/).  -->
+Hi, I am a second-year master student in Cyber Security at [Nanjing University of Posts and Telecommunications (NJUPT)](https://www.njupt.edu.cn/), advised by Prof. [Guozi Sun](https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52A432DCFE050007F01006EFE). Previously, I graduated from NJUPT with a bachelor's degree of information security in 2024. My past research focused on building a privacy-preserving and economically viable data marketplace.
 
-<!-- Previously, I graduated from NJUPT with a bachelor's degree in information security in 2024. My past research focused on building a privacy-preserving and economically viable data marketplace. -->
+I'm currently working as a research assistant under th the supervision of Prof.[Li Lu](https://lynnlilu.github.io/). My current research focuses on **Watermarking** and **Deepfake detection** in the audio domain. Welcome to connect with me!
+
 
 <!-- Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 

@@ -1,0 +1,39 @@
+<!-- Research Experience Section -->
+{% if page.research_experience %}
+  <h2><a href="#" style="color: inherit">research experience</a></h2>
+  <div class="research-section">
+    {% if page.research_experience.entries %}
+      {% assign research_entries = page.research_experience.entries | sort: 'start_year' | reverse %}
+      <div style="margin-bottom: 2rem;">
+        {% for entry in research_entries %}
+          <div style="margin-bottom: 1.5rem; {% unless forloop.last %}border-bottom: 1px solid #f0f0f0; padding-bottom: 1.5rem;{% endunless %}">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem;">
+              <h3 style="margin: 0; font-size: 1.1rem; font-weight: 600; color: #333;">{{ entry.title }}</h3>
+              <span style="color: #888; font-size: 0.9rem; white-space: nowrap;">
+                {% if entry.end_year %}
+                  {{ entry.start_year }} – {{ entry.end_year }}
+                {% else %}
+                  {{ entry.start_year }} – present
+                {% endif %}
+              </span>
+            </div>
+
+            <div style="color: #666; font-size: 0.95rem; margin-bottom: 0.2rem;">
+              <strong>{{ entry.institution }}</strong>
+              {% if entry.supervisor %} • Supervisor: {{ entry.supervisor }}{% endif %}
+              {% if entry.location %} • {{ entry.location }}{% endif %}
+            </div>
+
+            {% if entry.description %}
+              <div style="color: #555; font-size: 0.9rem; line-height: 1.4; margin-top: 0.5rem;">
+                {% for item in entry.description %}
+                  <div style="margin-bottom: 0.2rem;">{{ item }}</div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
