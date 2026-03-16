@@ -91,6 +91,9 @@ jobs:
           set -e
           bundle update --conservative nokogiri || bundle update nokogiri || true
 
+      - name: Install gems 💎
+        run: bundle install
+
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
         with:
