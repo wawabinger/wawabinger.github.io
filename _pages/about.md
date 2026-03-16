@@ -38,11 +38,11 @@ research_experience:
 education:
   enabled: true
   entries:
-    - degree: Master of Science in Cyber Security
+    - degree: M.S. in Cyber Security
       institution: College of Computer Science, NJUPT
       start_year: 2024
       end_year: 2026 (expected)
-    - degree: Bachelor of Science in Information Security
+    - degree: B.E. in Information Security
       institution: College of Computer Science, NJUPT
       start_year: 2020
       end_year: 2024
@@ -73,7 +73,7 @@ latest_posts:
 
 Hi, I am a second-year master student in Cyber Security at [Nanjing University of Posts and Telecommunications (NJUPT)](https://www.njupt.edu.cn/), advised by Prof. [Guozi Sun](https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52A432DCFE050007F01006EFE). Previously, I graduated from NJUPT with a bachelor's degree of information security in 2024. My past research focused on building a privacy-preserving and economically viable data marketplace.
 
-I'm currently working as a research assistant under th the supervision of Prof.[Li Lu](https://lynnlilu.github.io/). My current research focuses on **Watermarking** and **Deepfake detection** in the audio domain. Welcome to connect with me!
+I'm currently working as a research assistant in Zhejiang University under th the supervision of Prof.[Li Lu](https://lynnlilu.github.io/). My current research focuses on **Watermarking** and **Deepfake detection** in the audio domain. Welcome to connect with me!
 
 <!-- Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 
