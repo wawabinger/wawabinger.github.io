@@ -1,7 +1,7 @@
 ---
 layout: about
 title: About
-permalink: /
+permalink: /classic/
 subtitle: 悟以往之不谏 知来者之可追
 # <a href='https://www.njupt.edu.cn/'>NJUPT</a>. Nanjing, China.
 profile:
@@ -38,6 +38,10 @@ research_experience:
 education:
   enabled: true
   entries:
+    - degree: Ph.D. in Artificial Intelligence
+      institution: College of Artificial Intelligence, ZJU
+      start_year: 2026
+      end_year: now
     - degree: M.S. in Cyber Security
       institution: College of Computer Science, NJUPT
       start_year: 2024

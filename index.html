@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Puhe Hao - Ph.D. Student at ZJU">
+    <title>Puhe Hao | NJUPT</title>
+    <style>
+        /* --- 核心样式配置 --- */
+        :root {
+            --primary-color: #003366; /* 主色 */
+            --accent-color: #d9534f;  /* 强调色 */
+            --text-color: #333;
+            --light-text: #666;
+            --bg-color: #fff;
+            --link-color: #0056b3;
+            --section-spacing: 50px;
+            --item-spacing: 15px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        a { color: var(--link-color); text-decoration: none; transition: color 0.2s; }
+        a:hover { text-decoration: underline; color: #003d80; }
+
+        /* --- 头部区域 --- */
+        header {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profile-photo img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .profile-info { flex: 1; }
+        .profile-info h1 { margin: 0 0 10px 0; font-size: 2.5rem; color: var(--primary-color); letter-spacing: -0.5px; }
+        .profile-info h2 { font-size: 1.3rem; font-weight: 400; color: #555; margin: 0 0 8px 0; }
+        .motto { font-size: 0.95rem; color: var(--light-text); font-style: italic; margin: 0 0 20px 0; }
+        .contact-details { font-size: 1rem; color: var(--light-text); line-height: 1.8; }
+        .contact-details strong { color: #333; }
+
+        /* --- 通用章节样式 --- */
+        section { margin-bottom: var(--section-spacing); scroll-margin-top: 60px; }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        h4 {
+            font-size: 1.15rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #444;
+            font-weight: 600;
+        }
+
+        p { margin-bottom: 15px; text-align: justify; }
+
+        /* --- 列表样式优化 --- */
+        ul { padding-left: 18px; margin-top: 0; }
+        li { margin-bottom: 8px; }
+
+        /* --- 条目列表专用样式（论文 / 教育 / 经历 / 荣誉） --- */
+        .pub-list { list-style: none; padding-left: 0; }
+        .pub-list li { margin-bottom: 25px; line-height: 1.5; }
+
+        .pub-title {
+            display: block;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #222;
+            margin-bottom: 4px;
+        }
+
+        .pub-authors {
+            display: block;
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .pub-venue {
+            display: inline-block;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            background-color: #f0f4f8;
+            padding: 2px 8px;
+            border-radius: 4px;
+            vertical-align: 1px;
+        }
+
+        .pub-venue.ccf {
+            color: var(--accent-color);
+            background-color: #fdf0f0;
+            margin-left: 6px;
+        }
+
+        /* --- Education 样式 A：logo + 单行（当前生效） --- */
+        .education-list { list-style: none; padding-left: 0; }
+        .education-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .edu-logo {
+            flex: 0 0 24px;
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            margin-top: 1px;
+        }
+
+        /* --- 奖项与备注样式 --- */
+        .award-text, .note-text {
+            font-size: 0.9rem;
+        }
+        /* inline-block：跟前面的年份徽章排在同一行 */
+        .award-text {
+            display: inline-block;
+            margin-left: 8px;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        /* block：独占一行 */
+        .note-text {
+            display: block;
+            margin-top: 3px;
+            color: var(--light-text);
+            font-style: italic;
+        }
+
+        /* --- 布局容器：左导航 + 右内容 --- */
+        .layout-wrapper {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .sidebar-nav {
+            width: 180px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 40px;
+            padding-right: 20px;
+            border-right: 1px solid #eee;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 8px 0;
+            color: #666;
+            font-weight: 500;
+            border-left: 3px solid transparent;
+            padding-left: 15px;
+            margin-bottom: 5px;
+            transition: all 0.2s;
+        }
+
+        .sidebar-nav a:hover {
+            color: var(--primary-color);
+            border-left-color: var(--primary-color);
+            background-color: #f9f9f9;
+            text-decoration: none;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            min-width: 0;
+        }
+
+        /* --- 荧光笔高亮 --- */
+        .marker-highlight {
+            background: linear-gradient(120deg, #fff0c5 0%, #fff0c5 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 85%;
+            font-weight: bold;
+            color: #000;
+            padding: 0 4px;
+        }
+
+        /* --- 移动端适配 --- */
+        @media (max-width: 768px) {
+            header { flex-direction: column-reverse; align-items: center; text-align: center; gap: 30px; }
+            .profile-info { width: 100%; min-width: 0; }
+            .profile-photo img { width: 180px; height: 180px; }
+            .container { padding: 30px 20px; }
+            .layout-wrapper { display: block; }
+            .sidebar-nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="profile-info">
+            <h1>Puhe Hao</h1>
+            <h2>Ph.D. Student </h2>
+            <!-- <p class="motto">悟以往之不谏，知来者之可追</p> -->
+            <div class="contact-details">
+                College of Artificial Intelligence<br>
+                Zhejiang University<br>
+                <!-- <br> -->
+                <!-- <strong>Research Assistant:</strong> Zhejiang University<br> -->
+                <strong>E-mail:</strong> puhehao [at] gmail.com<br>
+                <!-- <strong>Links:</strong>
+                <a href="https://scholar.google.com/citations?user=abpBFs8AAAAJ&hl=zh-CN" target="_blank">Google Scholar</a> &middot; -->
+                <!-- <a href="https://github.com/wawabinger" target="_blank">GitHub</a> -->
+            </div>
+        </div>
+        <div class="profile-photo">
+            <img src="assets/img/prof_pic.jpg" alt="Puhe Hao">
+        </div>
+    </header>
+
+    <div class="layout-wrapper">
+        <aside class="sidebar-nav">
+            <nav>
+                <a href="#bio">Biography</a>
+                <a href="#education">Education</a>
+                <a href="#publications">Publications</a>
+                <a href="#honors">Honors</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+    <section id="bio">
+        <h3>Biography</h3>
+        <p>
+            Hi, I'm a first-year PhD student at College of Artificial Intelligence, Zhejiang University (ZJU), advised by Prof.Li Lu.
+            <!-- Hi, I am a second-year master student in Cyber Security at
+            <a href="https://www.njupt.edu.cn/" target="_blank">Nanjing University of Posts and Telecommunications (NJUPT)</a>,
+            advised by Prof. <a href="https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52A432DCFE050007F01006EFE" target="_blank">Guozi Sun</a>.
+            Previously, I graduated from NJUPT with a bachelor's degree in Information Security in 2024. -->
+            My past research focused on building a privacy-preserving and economically viable data marketplace.
+        </p>
+        <p>
+            I obtain my msater's and bachelor's degree from school of computer science, 
+            Nanjing University of Posts and Telecommunications (NJUPT), 
+            advised by Prof. <a href="https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52A432DCFE050007F01006EFE" target="_blank">Guozi Sun</a>. My past research focused on building privacy-preserving and economically viable data marketplace.
+        </p>
+        <p>    
+            My current research focuses on <span class="marker-highlight">Tracebility</span> and
+            <span class="marker-highlight">Copyright protection </span> realized by proactive wateramrking and passive detection.
+            Welcome to connect with me!
+        </p>
+    </section>
+
+    <section id="education">
+        <h3>Education</h3>
+
+        <!-- 样式 A（当前生效）：logo + 单行，年份用 pub-venue 徽章，参考 dongdongzhaoup.github.io -->
+        <ul class="education-list">
+            <li>
+                <img class="edu-logo" src="assets/img/logos/zju.png" alt="Zhejiang University logo">
+                <span><span class="pub-venue">2026 - now</span> Ph.D. Student, College of Artificial Intelligence, ZJU</span>
+            </li>
+            <li>
+                <img class="edu-logo" src="assets/img/logos/njupt.png" alt="NJUPT logo">
+                <span><span class="pub-venue">2024 - 2026</span> M.S., College of Computer Science, NJUPT</span>
+            </li>
+            <li>
+                <img class="edu-logo" src="assets/img/logos/njupt.png" alt="NJUPT logo">
+                <span><span class="pub-venue">2020 - 2024</span> B.E., College of Computer Science, NJUPT</span>
+            </li>
+        </ul>
+
+        <!-- 样式 B：三行式（标题 / 学院 / 年份徽章），与 Publications、Honors 一致。启用时把上面的样式 A 注释掉。
+        <ul class="pub-list">
+            <li>
+                <span class="pub-title">Ph.D. student</span>
+                <span class="pub-authors">College of Artificial Intelligence, Zhejiang University</span>
+                <span class="pub-venue">2026 - now</span>
+            </li>
+            <li>
+                <span class="pub-title">M.S.</span>
+                <span class="pub-authors">College of Computer Science (CCS), Nanjing University of Posts and Telecommunications</span>
+                <span class="pub-venue">2024 - 2026</span>
+            </li>
+            <li>
+                <span class="pub-title">B.E.</span>
+                <span class="pub-authors">College of Computer Science, Nanjing University of Posts and Telecommunications</span>
+                <span class="pub-venue">2020 - 2024</span>
+            </li>
+        </ul>
+        -->
+    </section>
+
+    <!-- <section id="experience">
+        <h3>Research Experience</h3>
+        <ul class="pub-list">
+            <li>
+                <span class="pub-title">Research Assistant</span>
+                <span class="pub-authors">Zhejiang University &middot; Advised by Prof. <a href="https://lynnlilu.github.io/" target="_blank">Li Lu</a></span>
+                <span class="pub-venue">2024 &ndash; now</span>
+                <span class="note-text">Audio watermarking and deepfake detection.</span>
+            </li>
+            <li>
+                <span class="pub-title">Research Assistant</span>
+                <span class="pub-authors">Nanjing University of Posts and Telecommunications &middot; Advised by Prof. <a href="https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52A432DCFE050007F01006EFE" target="_blank">Guozi Sun</a></span>
+                <span class="pub-venue">2021 &ndash; 2025</span>
+                <span class="note-text">Blockchain-based data sharing and data trading.</span>
+            </li>
+        </ul>
+    </section> -->
+
+    <section id="publications">
+        <h3>Publications</h3>
+        <ul class="pub-list">
+            <li>
+                <span class="pub-title">[J2] Decentralized access control for trustworthy data management in vehicular edge networks</span>
+                <span class="pub-authors"> <strong>Puhe Hao</strong> , Zihan Liu, Zhexuan Yang, Xiao Qu, Weizhi Meng, Guozi Sun.</span>
+                <span class="pub-venue">JSA 2026</span><span class="pub-venue ccf">CCF-B</span>
+            </li>
+
+            <li>
+                <span class="pub-title">[J1] BISE: Enhance data sharing security through consortium blockchain and IPFS</span>
+                <span class="pub-authors"> Mingxuan Chen, <strong>Puhe Hao</strong>, Weizhi Meng, Yasen Aizezi, Guozi Sun.</span>
+                <span class="pub-venue">JISA 2026</span><span class="pub-venue ccf">CCF-C</span>
+            </li>
+            <li>
+                <span class="pub-title">[C4] Sustainable Incentive for Model Trading in Decentralized and Personalized Federated Learning via DAG-Blockchain Consensus</span>
+                <span class="pub-authors"><strong>Puhe Hao</strong>, Zihan Liu, Jinfei Liu, and Guozi Sun.</span>
+                <span class="pub-venue">ICASSP 2026</span><span class="pub-venue ccf">CCF-B</span>
+            </li>
+            <li>
+                <span class="pub-title">[C3] Towards Efficient and Auditable Heterogeneous Data Management in Vehicular Edge Networks</span>
+                <span class="pub-authors"><strong>Puhe Hao</strong>, Rui Han, Yu Wang, Mingfa Wan, Teng Yuan, and Guozi Sun.</span>
+                <span class="pub-venue">CSCWD 2025</span><span class="pub-venue ccf">CCF-C</span>
+            </li>
+            <li>
+                <span class="pub-title">[C2] A Privacy-Preserving Data Sharing Scheme Based on Blockchain for Vehicular Edge Networks</span>
+                <span class="pub-authors"><strong>Puhe Hao</strong>, Tianyu Pan, Rui Han, Xiao Qu, Zhexuan Yang, and Guozi Sun.</span>
+                <span class="pub-venue">GLOBECOM 2023</span><span class="pub-venue ccf">CCF-C</span>
+            </li>
+            <li>
+                <span class="pub-title">[C1] RPChain: Regulatable Privacy-Preserving Group Data Sharing Based on Consortium Blockchain</span>
+                <span class="pub-authors"><strong>Puhe Hao</strong>, Tianyu Pan, Rui Han, Xiao Qu, Zhexuan Yang, and Guozi Sun.</span>
+                <span class="pub-venue">APNOMS 2023</span><span class="pub-venue ccf">CCF-C</span>
+            </li>
+        </ul>
+    </section>
+
+    <section id="honors">
+        <h3>Honors &amp; Awards</h3>
+        <ul class="pub-list">
+            <li>
+                <span class="pub-title"><span class="pub-venue">2024</span> Outstanding Graduate of NJUPT</span>
+                <!-- <span class="award-text">Top 3%</span> -->
+                <!-- <span class="pub-authors">Nanjing University of Posts and Telecommunications</span> -->
+            </li>
+            <li>
+                <span class="pub-title"><span class="pub-venue">2024</span> Academic Excellence Scholarship of NJUPT</span>
+                <!-- <span class="award-text">Top 1%</span> -->
+                <!-- <span class="pub-authors">Nanjing University of Posts and Telecommunications</span> -->
+            </li>
+            <li>
+                <span class="pub-title"><span class="pub-venue">2022</span> Telecom Enterprise Scholarship of NJUPT</span>
+                <!-- <span class="award-text">Top 1%</span> -->
+                <!-- <span class="pub-authors">Nanjing University of Posts and Telecommunications</span> -->
+            </li>
+        </ul>
+    </section>
+
+        </main>
+    </div>
+
+</div>
+
+</body>
+</html>
